@@ -1,0 +1,117 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <div class="bg-card">
+       <div class="flex flex-col w-full max-w-screen-xl mx-auto px-6 sm:px-8">
+           <div class="flex flex-col sm:flex-row flex-auto sm:items-center min-w-0 my-8 sm:my-12">
+               <!-- Avatar and name -->
+               <div class="flex flex-auto items-center min-w-0 justify-between">
+                   <!-- <div class="flex flex-col min-w-0 ml-4">
+                       <ng-container>
+                           <div class="text-2xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug">Welcome Back , Client!</div>
+                       </ng-container>
+                       <div class="flex items-center">
+
+                           Streamline your project management, resolve problems, and collaborate effectively
+                          
+                       </div>
+                     
+                   </div> -->
+
+
+
+                   <div class="flex flex-col min-w-0 ml-4">
+                    <ng-container>
+                        <div class="text-2xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug">
+                         Incident Management System</div>
+                    </ng-container>
+                    <div class="flex items-center text-xl font-medium">
+                      Project List
+                    </div>
+                </div>
+
+
+                   <div class="flex">
+
+                    <button [routerLink]="['/create-project']"
+                    class="ml-4"
+                    mat-flat-button
+                    [color]="'primary'">
+                    <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+                    <span class="ml-2 mr-1">Create Project</span>
+                </button>
+
+                   </div>
+                  
+               </div>
+           </div>
+       </div>
+   </div>
+   
+   
+   
+   <div class="flex-auto border-t -mt-px pt-4 sm:pt-6 p-6" >
+       <div class="mat-mdc-tab-group mat-mdc-tab-body-content">
+       <div class="w-full max-w-screen-xl mx-auto">
+   
+           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0">
+               <!-- Summary -->
+               <!-- <div class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden">
+                   <div class="flex items-start justify-between">
+                      <div class="flex justify-center w-full">
+                       <img class="w-44" src="assets/images/logo/logoUrban.jpg" alt="Logo">
+                    </div>
+                   </div>
+                   <div class="flex flex-col items-center mt-2">
+                       <div class="text-4xl  font-bold tracking-tight leading-none pt-4">Made-in</div>
+                       <div class="text-lg font-medium pt-4">
+                        Join the Made-in community to foster innovation and growth, connecting entrepreneurs, 
+                        investors, and advisors to connect, collaborate, and drive the future.</div>
+                   </div>
+
+                   
+                   <button [routerLink]="['/ticket-list']"
+                   class="ml-4 mt-4"
+                   mat-flat-button
+                   [color]="'primary'">
+                   <span class="ml-2 mr-1">View Tickets</span>
+               </button>
+               </div> -->
+
+
+               <!-- Assuming the following code is within an Angular component template -->
+
+<div *ngFor="let project of projectList" class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden">
+    <div class="flex items-start justify-between">
+      <div class="flex justify-center w-full">
+        <img class="w-44" src="assets/images/logo/logoUrban.jpg" alt="Logo">
+      </div>
+    </div>
+    <div class="flex flex-col items-center mt-2">
+      <div class="text-4xl font-bold tracking-tight leading-none pt-4">{{ project.name }}</div>
+      <div class="text-lg font-medium pt-4">
+        {{ project.description }}
+      </div>
+    </div>
+    <button (click)="navigateToTicketList(project.id)"
+      class="ml-4 mt-4"
+      mat-flat-button
+      [color]="'primary'">
+      <span class="ml-2 mr-1">View Tickets</span>
+    </button>
+  </div>
+  
+
+
+              
+               
+           </div>
+       </div>
+   
+   </div>
+   </div>
+   
+ </div>
+                   
+           
+   

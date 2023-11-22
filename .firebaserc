@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "ticket-management-96e15"
+  },
+  "targets": {
+    "ticket-management-96e15": {
+      "hosting": {
+        "new-alias": [
+          "incident-management-system"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,0 +1,177 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <div class="bg-card">
+       <div class="flex flex-col w-full max-w-screen-xl mx-auto px-6 sm:px-8">
+           <div class="flex flex-col sm:flex-row flex-auto sm:items-center min-w-0 my-8 sm:my-12">
+               <!-- Avatar and name -->
+               <div class="flex flex-auto items-center min-w-0 justify-between">
+                   <!-- <div class="flex flex-col min-w-0 ml-4">
+                       <ng-container>
+                           <div class="text-2xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug"> Create Project</div>
+                       </ng-container>
+                       <div class="flex items-center">
+                        <a
+                        class="text-primary cursor-pointer"
+                        [routerLink]="['/']">Home
+                    </a>
+                    <div class="">/ Create Ticket</div>
+                       </div>
+                     
+                   </div> -->
+
+
+                   <div class="flex flex-col min-w-0 ml-4">
+                    <ng-container>
+                        <div class="text-2xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug">
+                         Incident Management System</div>
+                    </ng-container>
+                    <div class="flex items-center text-xl font-medium">
+                      Edit Project
+                    </div>
+                </div>
+
+                  
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+
+ 
+   <div class="w-full max-w-screen-xl mx-auto px-6 sm:px-8">
+
+    <div class="pt-8">
+
+        <form [formGroup]="formValue">
+
+            <div class="flex justify-between">
+
+                <mat-form-field class="w-2/5">
+                    <mat-label>Project Name</mat-label>
+
+                    <input    matInput formControlName="name">
+                    <!-- <mat-error *ngIf="formValue.get('quantity').hasError('required')">
+                      Quantity is required
+                  </mat-error> -->
+                  </mat-form-field>  
+
+                
+                   <mat-form-field class="w-2/5">
+                    <mat-label>Client Name</mat-label>
+                   
+                    <mat-select formControlName="clientName">
+                      <mat-option>
+                        <ngx-mat-select-search [formControl]="searchClient" noEntriesFoundLabel="'No Matching Vehicle Found'" placeholderLabel="Search..."></ngx-mat-select-search>
+                      </mat-option>
+                      <mat-option *ngFor="let item of filteredClient" [value]="item">{{ item.name }}</mat-option>
+                                 
+                     
+                    </mat-select>
+
+                    <!-- <mat-error *ngIf="formValue.get('vehicleId').hasError('required')">
+                      Vehicle is required
+                  </mat-error> -->
+                      
+                  </mat-form-field> 
+
+               
+
+                    <!-- <mat-form-field class="w-2/5">
+                        <mat-label>Choose Start & End Date</mat-label>
+                        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                          <input matStartDate formControlName="start" placeholder="Start date">
+                          <input matEndDate formControlName="end" placeholder="End date">
+                        </mat-date-range-input>
+                        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                      
+                      </mat-form-field> -->
+
+
+            </div>
+
+
+
+           <div class="flex justify-between">
+
+          
+            <!--File logo start-->
+
+                    <!-- <mat-form-field class="w-full">
+                        <mat-label>File Logo</mat-label>
+                        <button mat-icon-button matPrefix (click)="f_input.click()" type="button">
+                          <mat-icon>attach_file</mat-icon>
+                        </button>
+
+                        
+                            <mat-chip *ngIf="selectedFile">
+                              {{ selectedFile.name }}
+                              <mat-icon matChipRemove (click)="removeFile()">cancel</mat-icon>
+                            </mat-chip>
+                          
+    
+                          <img [src]="url" height="100" class="w-1/4"> <br/>
+
+                        <input type="text" readonly matInput />
+                        <input
+                          type="file"
+                          multiple
+                          hidden
+                          #f_input
+                          (change)="onSelectFile($event)"
+                        />
+                      </mat-form-field> -->
+
+                     <!--File logo end-->
+
+
+                    <mat-form-field class="w-2/5">
+                      <mat-label>Start Date</mat-label>
+                      <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+                      <mat-hint>MM/DD/YYYY</mat-hint>
+                      <mat-datepicker-toggle matIconSuffix [for]="startPicker"></mat-datepicker-toggle>
+                      <mat-datepicker #startPicker startView="year" [startAt]="startDate"></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-2/5">
+                      <mat-label>End Date</mat-label>
+                      <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+                      <mat-hint>MM/DD/YYYY</mat-hint>
+                      <mat-datepicker-toggle matIconSuffix [for]="endPicker"></mat-datepicker-toggle>
+                      <mat-datepicker #endPicker startView="year" [startAt]="startDate"></mat-datepicker>
+                    </mat-form-field>
+
+                      
+           </div>
+
+
+           <div class="flex">
+
+            <mat-form-field class="w-full">
+                <mat-label>Description</mat-label>
+                <textarea matInput rows="6" required formControlName="description" ></textarea>
+              </mat-form-field>
+
+           </div>
+
+
+           <div class="flex justify-end">
+
+            <button mat-flat-button
+            [color]="'primary'" (click)="getFormData()"> Update </button>
+
+            </div>
+
+        </form>
+
+
+    </div>
+  
+</div>
+   
+   
+
+</div>

@@ -1,0 +1,141 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <div class="bg-card">
+       <div class="flex flex-col w-full max-w-screen-xl mx-auto px-6 sm:px-8">
+           <div class="flex flex-col sm:flex-row flex-auto sm:items-center min-w-0 my-8 sm:my-12">
+               <!-- Avatar and name -->
+               <div class="flex flex-auto items-center min-w-0 justify-between">
+                   <!-- <div class="flex flex-col min-w-0 ml-4">
+                       <ng-container>
+                           <div class="text-2xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug">Made In Create Ticket</div>
+                       </ng-container>
+                       <div class="flex items-center">
+                        <a
+                        class="text-primary cursor-pointer"
+                        [routerLink]="['/']">Home
+                    </a>
+                    <div class="">/ Create Ticket</div>
+                       </div>
+                     
+                   </div> -->
+
+
+                   <div class="flex flex-col min-w-0 ml-4">
+                    <ng-container>
+                        <div class="text-2xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug">
+                         Incident Management System</div>
+                    </ng-container>
+                    <div class="flex items-center text-xl font-medium">
+                      EditTicket
+                    </div>
+                </div>
+
+                  
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+
+   <div class="w-full max-w-screen-xl mx-auto px-6 sm:px-8">
+
+    <div class="pt-8">
+
+       
+
+
+
+
+        <form [formGroup]="viewTicketForm">
+
+            <div class="flex justify-between">
+
+                <mat-form-field class="w-2/5">
+                    <mat-label>Name</mat-label>
+                    <input  min=0  matInput formControlName="name" >
+                    <!-- <mat-error *ngIf="formValue.get('quantity').hasError('required')">
+                      Quantity is required
+                  </mat-error> -->
+                  </mat-form-field>  
+
+                  <mat-form-field class="w-2/5">
+                    <mat-label>Email Address</mat-label>
+                    <input   matInput formControlName="email">
+                    <!-- <mat-error *ngIf="formValue.get('quantity').hasError('required')">
+                      Quantity is required
+                  </mat-error> -->
+                  </mat-form-field> 
+
+            </div>
+
+           <div class="flex justify-between">
+
+            <mat-form-field class="w-2/5">
+                <mat-label>Subject</mat-label>
+                <input  min=0  matInput required formControlName="subject">
+                <!-- <mat-error *ngIf="formValue.get('quantity').hasError('required')">
+                  Quantity is required
+              </mat-error> -->
+              </mat-form-field> 
+
+              <div class="w-2/5 flex justify-between">
+
+                <mat-form-field class="w-2/5">
+                    <mat-label>Priority</mat-label>
+                    <mat-select formControlName="priority" >
+                      <mat-option value="Low">Low</mat-option>
+                      <mat-option value="Medium">Medium</mat-option>
+                      <mat-option value="High">High</mat-option>
+                      <mat-option value="Critical">Critical</mat-option>
+                    </mat-select>
+                    <!-- <mat-error *ngIf="formValue.get('type').hasError('required')">Project Type is required</mat-error> -->
+                  </mat-form-field>
+
+                  <mat-form-field class="w-2/5">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status" >
+                      <mat-option value="Open">Open</mat-option>
+                      <mat-option value="In Progress">In Progress</mat-option>
+                      <mat-option value="Closed">Closed</mat-option>
+                      <mat-option value="On Hold">On Hold</mat-option>
+                      <mat-option value="Reopened">Reopened</mat-option>
+                      <mat-option value="Cancelled">Cancelled</mat-option>
+                    </mat-select>
+                    <!-- <mat-error *ngIf="formValue.get('type').hasError('required')">Project Type is required</mat-error> -->
+                  </mat-form-field>
+
+              </div>
+
+             
+
+           </div>
+
+           <div class="flex">
+
+            <mat-form-field class="w-full">
+                <mat-label>Message</mat-label>
+                <textarea matInput rows="6" required formControlName="message"></textarea>
+              </mat-form-field>
+
+           </div>
+
+           <div class="flex justify-end">
+
+            <button mat-flat-button
+            [color]="'primary'" (click)="getFormData()"> Update </button>
+
+            </div>
+
+        </form>
+
+
+    </div>
+   
+   
+  
+</div>
+   
+
+</div>
